@@ -22,7 +22,7 @@ export default function SchoolToolLanding() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <Image src="/logo.png" alt="School Tool Logo" width={50} height={50} />
+        <Image src="/logo.webp" alt="School Tool Logo" width={50} height={50} />
         <nav>
           <ul className="flex space-x-4">
             <li><a href="#" className="text-blue-400 hover:text-blue-300">Home</a></li>
