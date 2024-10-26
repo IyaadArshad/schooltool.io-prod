@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { ArrowRight, Book, Brain, Clock, MessageCircle, Award, Shield } from 'lucide-react'
 import Image from 'next/image'
 
@@ -37,31 +36,17 @@ export default function SchoolToolLanding() {
       <main>
         {/* Landing Section */}
         <section className="container mx-auto px-4 py-20 text-center">
-          <motion.h1 
-            className="text-5xl font-bold mb-6"
-            initial={{ opacity: 0, scale: 1.5, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            transition={{ duration: 0.8 }}
-          >
+          <h1 className="text-5xl font-bold mb-6 animate__animated animate__fadeInDown">
             Welcome to School Tool
-          </motion.h1>
-          <motion.p 
-            className="text-xl mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
+          </h1>
+          <p className="text-xl mb-8 animate__animated animate__fadeInUp animate__delay-1s">
             The all-in-one platform for students and educators
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          >
+          </p>
+          <div className="animate__animated animate__fadeInUp animate__delay-2s">
             <a href="#" className="bg-blue-600 text-white px-6 py-3 rounded-full inline-flex items-center hover:bg-blue-700 transition-colors">
               Explore Our Services <ArrowRight className="ml-2" />
             </a>
-          </motion.div>
+          </div>
         </section>
 
         {/* Services Overview Section */}
@@ -70,18 +55,15 @@ export default function SchoolToolLanding() {
             <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <motion.div
+                <div
                   key={index}
-                  className="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  whileHover={{ scale: 1.05 }}
+                  className={`bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow animate__animated ${isLoaded ? 'animate__fadeInUp' : ''}`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <service.icon className="w-12 h-12 text-blue-400 mb-4" />
                   <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
                   <p className="text-gray-300">{service.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -91,11 +73,7 @@ export default function SchoolToolLanding() {
         <section className="container mx-auto px-4 py-20">
           <h2 className="text-3xl font-bold text-center mb-12">About School Tool</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isLoaded ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5 }}
-            >
+            <div className={`animate__animated ${isLoaded ? 'animate__fadeInLeft' : ''}`}>
               <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
               <p className="text-gray-300 mb-4">
                 School Tool aims to revolutionize the educational experience by providing a comprehensive suite of digital tools designed to enhance learning, improve communication, and streamline administrative tasks.
@@ -103,14 +81,10 @@ export default function SchoolToolLanding() {
               <p className="text-gray-300">
                 We believe in empowering students, teachers, and administrators with cutting-edge technology to create a more efficient and effective educational environment.
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={isLoaded ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            </div>
+            <div className={`animate__animated ${isLoaded ? 'animate__fadeInRight' : ''}`} style={{ animationDelay: '0.2s' }}>
               <Image src="/placeholder.svg?height=300&width=400" width={400} height={300} alt="About School Tool" className="rounded-lg" />
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -127,17 +101,15 @@ export default function SchoolToolLanding() {
                 { icon: Book, title: 'Comprehensive', description: 'All-in-one solution for educational needs' },
                 { icon: Award, title: 'Motivating', description: 'Gamification elements to encourage engagement' },
               ].map((feature, index) => (
-                <motion.div
+                <div
                   key={index}
-                  className="bg-gray-700 p-6 rounded-lg shadow-lg"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className={`bg-gray-700 p-6 rounded-lg shadow-lg animate__animated ${isLoaded ? 'animate__fadeInUp' : ''}`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <feature.icon className="w-12 h-12 text-blue-400 mb-4" />
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-gray-300">{feature.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -152,17 +124,15 @@ export default function SchoolToolLanding() {
               { name: 'Jane Smith', role: 'Student', quote: 'I love how easy it is to keep track of my assignments and collaborate with classmates.' },
               { name: 'Mike Johnson', role: 'Administrator', quote: 'The analytics provided by School Tool have been invaluable in improving our school\'s performance.' },
             ].map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="bg-gray-700 p-6 rounded-lg shadow-lg"
-                initial={{ opacity: 0, y: 50 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className={`bg-gray-700 p-6 rounded-lg shadow-lg animate__animated ${isLoaded ? 'animate__fadeInUp' : ''}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <p className="text-gray-300 mb-4">"{testimonial.quote}"</p>
                 <p className="font-semibold">{testimonial.name}</p>
                 <p className="text-sm text-gray-400">{testimonial.role}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>
@@ -178,24 +148,22 @@ export default function SchoolToolLanding() {
                 { name: 'Pro', price: '$19.99', features: ['Access to all services', 'Priority support', '10GB storage', 'Advanced analytics'] },
                 { name: 'Enterprise', price: 'Custom', features: ['Custom solutions', 'Dedicated support', 'Unlimited storage', 'API access'] },
               ].map((plan, index) => (
-                <motion.div
+                <div
                   key={index}
-                  className="bg-gray-700 p-6 rounded-lg shadow-lg text-center"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className={`bg-gray-700 p-6 rounded-lg shadow-lg text-center animate__animated ${isLoaded ? 'animate__fadeInUp' : ''}`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
                   <p className="text-3xl font-bold mb-6">{plan.price}</p>
                   <ul className="text-gray-300 mb-6">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="mb-2">{feature}</li>
-                    ))}
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="mb-2">{feature}</li>
+                  ))}
                   </ul>
                   <a href="#" className="bg-blue-600 text-white px-6 py-2 rounded-full inline-block hover:bg-blue-700 transition-colors">
-                    Choose Plan
+                  Choose Plan
                   </a>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -205,11 +173,7 @@ export default function SchoolToolLanding() {
         <section className="container mx-auto px-4 py-20">
           <h2 className="text-3xl font-bold text-center mb-12">Seamless Integration</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isLoaded ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5 }}
-            >
+            <div className={`animate__animated ${isLoaded ? 'animate__fadeInLeft' : ''}`}>
               <h3 className="text-2xl font-semibold mb-4">Works with Your Existing Tools</h3>
               <p className="text-gray-300 mb-4">
                 School Tool integrates seamlessly with popular educational platforms and management systems, ensuring a smooth transition and enhanced functionality.
@@ -220,14 +184,10 @@ export default function SchoolToolLanding() {
                 <li>Productivity suites (Google Workspace, Microsoft 365)</li>
                 <li>Video conferencing tools</li>
               </ul>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={isLoaded ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            </div>
+            <div className={`animate__animated ${isLoaded ? 'animate__fadeInRight' : ''}`} style={{ animationDelay: '0.2s' }}>
               <Image src="/placeholder.svg?height=300&width=400" width={400} height={300} alt="Integration Illustration" className="rounded-lg" />
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -241,18 +201,16 @@ export default function SchoolToolLanding() {
                 { title: 'Streamlining Administrative Tasks', school: 'Oakridge School District', result: '50% reduction in paperwork' },
                 { title: 'Enhancing Parent-Teacher Communication', school: 'Sunnydale Elementary', result: '90% parent satisfaction rate' },
               ].map((study, index) => (
-                <motion.div
+                <div
                   key={index}
-                  className="bg-gray-700 p-6 rounded-lg shadow-lg"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className={`bg-gray-700 p-6 rounded-lg shadow-lg animate__animated ${isLoaded ? 'animate__fadeInUp' : ''}`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <h3 className="text-xl font-semibold mb-2">{study.title}</h3>
                   <p className="text-gray-400 mb-4">{study.school}</p>
-                  <p  className="text-gray-300">{study.result}</p>
+                  <p className="text-gray-300">{study.result}</p>
                   <a href="#" className="text-blue-400 hover:underline mt-4 inline-block">Read full case study</a>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -268,16 +226,14 @@ export default function SchoolToolLanding() {
               { q: 'Is training provided for new users?', a: 'We offer comprehensive training sessions and ongoing support to ensure smooth adoption and usage.' },
               { q: 'How customizable is School Tool?', a: 'School Tool offers a high degree of customization to meet the specific needs of each educational institution.' },
             ].map((faq, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="bg-gray-700 p-6 rounded-lg shadow-lg"
-                initial={{ opacity: 0, y: 50 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className={`bg-gray-700 p-6 rounded-lg shadow-lg animate__animated ${isLoaded ? 'animate__fadeInUp' : ''}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <h3 className="text-xl font-semibold mb-2">{faq.q}</h3>
                 <p className="text-gray-300">{faq.a}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>
@@ -336,7 +292,7 @@ export default function SchoolToolLanding() {
             <p>&copy; {new Date().getFullYear()} School Tool. All rights reserved.</p>
           </div>
         </div>
-      </footer>
+    </footer>
     </div>
   )
 }
