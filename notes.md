@@ -1,1 +1,0 @@
-**Only meant to be for the landing page of schooltool.io**
