@@ -1,5 +1,5 @@
 export default function HelloWorld () {
     return(
-        <p>Hello World</p>
+        <p className="text-3xl font-bold underline"> Hello World</p>
     );
 }
