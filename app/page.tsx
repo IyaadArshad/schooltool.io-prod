@@ -83,7 +83,7 @@ export default function SchoolToolLanding() {
               </p>
             </div>
             <div className={`animate__animated ${isLoaded ? 'animate__fadeInRight' : ''}`} style={{ animationDelay: '0.2s' }}>
-              <Image src="/logo.png?height=300&width=400" width={400} height={300} alt="About School Tool" className="rounded-lg" />
+              <Image src="/logo.webp?height=300&width=400" width={400} height={300} alt="About School Tool" className="rounded-lg" />
             </div>
           </div>
         </section>
@@ -186,7 +186,7 @@ export default function SchoolToolLanding() {
               </ul>
             </div>
             <div className={`animate__animated ${isLoaded ? 'animate__fadeInRight' : ''}`} style={{ animationDelay: '0.2s' }}>
-              <Image src="/logo.png?height=300&width=400" width={400} height={300} alt="Integration Illustration" className="rounded-lg" />
+              <Image src="/logo.webp?height=300&width=400" width={400} height={300} alt="Integration Illustration" className="rounded-lg" />
             </div>
           </div>
         </section>
