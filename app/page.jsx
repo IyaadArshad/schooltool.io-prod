@@ -1,12 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Brain, Clock, MessageCircle, Award, Sprout } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import 'animate.css'
 
 export default function SchoolToolLanding() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -41,11 +41,8 @@ export default function SchoolToolLanding() {
 
       <main>
         <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-[#13151A] to-[#0E0F12]">
-          <motion.div 
-            className="container mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+          <div 
+            className="container mx-auto text-center animate__animated animate__fadeInUp"
           >
             <h1 className="text-5xl font-bold mb-6 text-[#FFFFFF]">
               Revolutionize Your School with AI-Powered Tools
@@ -56,7 +53,7 @@ export default function SchoolToolLanding() {
             <Button className="bg-[#3A86FF] hover:bg-[#2A76EF] text-white text-lg px-8 py-3">
               Explore Our Services
             </Button>
-          </motion.div>
+          </div>
         </section>
 
         <section id="services" className="py-20 px-6 bg-[#13151A]">
@@ -200,10 +197,7 @@ export default function SchoolToolLanding() {
 
 function ServiceCard({ icon, title, description, color }) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300 }}
-    >
+    <div className="animate__animated animate__pulse">
       <Card className="bg-[#1A1D24] border-[#3A3F4A] overflow-hidden">
         <div className={`h-2 w-full`} style={{ backgroundColor: color }}></div>
         <CardHeader>
@@ -214,16 +208,13 @@ function ServiceCard({ icon, title, description, color }) {
         </CardHeader>
         <CardContent>{description}</CardContent>
       </Card>
-    </motion.div>
+    </div>
   )
 }
 
 function FeatureCard({ icon, title, description }) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300 }}
-    >
+    <div className="animate__animated animate__pulse">
       <Card className="bg-[#1A1D24] border-[#3A3F4A]">
         <CardHeader>
           <CardTitle className="flex items-center space-x-3">
@@ -233,7 +224,7 @@ function FeatureCard({ icon, title, description }) {
         </CardHeader>
         <CardContent>{description}</CardContent>
       </Card>
-    </motion.div>
+    </div>
   )
 }
 
