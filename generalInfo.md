@@ -1,4 +1,4 @@
-Create landing pages for the app **"School Tool"** and its associated services. All landing pages should have entrance animations for everything and special scroll animations for each section. Images should turn into view, and text should start large and blurry, transitioning to smaller and clear. These are just examples of animations to integrate.
+landing pages for the app **"School Tool"** and its associated services. All landing pages should have entrance animations for everything and special scroll animations for each section. Images should turn into view, and text should start large and blurry, transitioning to smaller and clear. These are just examples of animations to integrate.
 
 **School Tool** is an **"All-in-one platform for students"**. The landing page should showcase that it offers different platforms. In one of the explanation sections, state that schools can pick and choose which services they need so that they pay only for what they require.
 
